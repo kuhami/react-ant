@@ -55,7 +55,7 @@ class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
       this.state = ({
-          tabList:[{closable: false,key: "/home/home",tab: "Home",content: <Home/>,locale:"menu.home"}],
+          tabList:[{closable: false,key: "/home/home",tab: "首页",content: <Home/>,locale:"menu.home"}],
         tabListKey:[],
         activeKey:'/dashboard/workplace',
         activeRemove: false
@@ -296,8 +296,9 @@ class BasicLayout extends React.PureComponent {
                           onChange={this.onChange}
                           onPrevClick = {this.onPrevClick}
                           // tabBarExtraContent={}
-                          // tabBarStyle={{color:'red'}}
+                          tabBarStyle={{background:'#fff'}}
                           tabPosition="top"
+                          tabBarGutter={-1}
                           hideAdd
                           type="editable-card"
                           onEdit={this.onEdit}

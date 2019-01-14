@@ -8,7 +8,6 @@ import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 class SearchList extends Component {
   handleTabChange = key => {
     const { match } = this.props;
-      console.log(key,match);
     switch (key) {
       case 'articles':
         router.push(`${match.url}/articles`);
@@ -58,7 +57,6 @@ class SearchList extends Component {
     );
 
     const { match, children, location } = this.props;
-      console.log(location);
       return (
       <PageHeaderWrapper
         title="搜索列表"
