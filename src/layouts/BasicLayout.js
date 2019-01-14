@@ -55,7 +55,7 @@ class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
       this.state = ({
-          tabList:[{closable: false,key: "/home/home",tab: "Home",content: <Home/>,locale:"menu.form.stepform.Home"}],
+          tabList:[{closable: false,key: "/home/home",tab: "Home",content: <Home/>,locale:"menu.home"}],
         tabListKey:[],
         activeKey:'/dashboard/workplace',
         activeRemove: false

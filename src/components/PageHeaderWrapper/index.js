@@ -8,7 +8,7 @@ import styles from './index.less';
 import MenuContext from '@/layouts/MenuContext';
 
 const PageHeaderWrapper = ({ children, contentWidth, wrapperClassName, top, ...restProps }) => (
-  <div style={{ margin: '-24px -24px 0' }} className={wrapperClassName}>
+  <div style={{ margin: '-14px -24px 0' }} className={wrapperClassName}>
     {top}
     <MenuContext.Consumer>
       {value => (

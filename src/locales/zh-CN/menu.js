@@ -10,6 +10,7 @@ export default {
   'menu.form.stepform.info': '分步表单（填写转账信息）',
   'menu.form.stepform.confirm': '分步表单（确认转账信息）',
   'menu.form.stepform.result': '分步表单（完成）',
+  'menu.form.stepform.Home': '首页',
   'menu.form.advancedform': '高级表单',
   'menu.list': '列表页',
   'menu.list.searchtable': '查询表格',
