@@ -54,8 +54,6 @@ const query = {
 class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
-      console.log(this);
-
       this.state = ({
           tabList:[{closable: false,key: "/home/home",tab: "Home",content: <Home/>,locale:"menu.form.stepform.Home"}],
         tabListKey:[],
@@ -240,10 +238,8 @@ class BasicLayout extends React.PureComponent {
     const tabLists = this.updateTreeList(menuData);
     const {tabListKey,tabList,activeRemove} =  this.state
     this.setState({ activeKey:location.pathname });
-      console.log(activeRemove);
       tabLists.map((v) => {
           if(v.key == location.pathname && !activeRemove){
-              console.log(v);
               v.content = children
               if(tabList.length == 0){
                   v.closable = false
@@ -258,8 +254,8 @@ class BasicLayout extends React.PureComponent {
 
       if(location.pathname == '/'){
           router.push('/home/home')
-          this.setState({ activeRemove:false });
       }
+      this.setState({ activeRemove:false });
       this.state.tabListKey = tabList.map((va)=>va.key)
       const isTop = PropsLayout === 'topmenu';
      const routerConfig = this.getRouterAuthority(pathname, routes);
