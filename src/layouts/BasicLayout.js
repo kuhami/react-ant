@@ -258,6 +258,7 @@ class BasicLayout extends React.PureComponent {
 
       if(location.pathname == '/'){
           router.push('/home/home')
+          this.setState({ activeRemove:false });
       }
       this.state.tabListKey = tabList.map((va)=>va.key)
       const isTop = PropsLayout === 'topmenu';
