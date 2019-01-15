@@ -77,7 +77,7 @@ UI-решение "из коробки" для корпоративных при
 ## Использование
 
 ```bash
-$ git clone https://github.com/ant-design/ant-design-pro.git --depth=1
+$ git clone https://github.com/kuhami/react-ant.git --depth=1
 $ cd react-ant
 $ npm install
 $ npm start         # visit http://localhost:8000
