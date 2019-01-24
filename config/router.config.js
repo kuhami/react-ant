@@ -23,7 +23,7 @@ export default [
       {
             path: '/study',
             name: 'study',
-            icon: 'dashboard',
+            icon: 'laptop',
             level:'1',
             routes: [
                 {

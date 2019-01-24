@@ -1,5 +1,8 @@
 export default {
   'menu.home': '首页',
+  'menu.study': 'study',
+  'menu.study.table': 'table',
+  'menu.study.Components': 'Components',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': '分析页',
   'menu.dashboard.monitor': '监控页',
