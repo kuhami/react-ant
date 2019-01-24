@@ -19,6 +19,26 @@ export default [
     routes: [
       // dashboard
       { path: '/', redirect: '/dashboard/analysis' },
+      // study
+      {
+            path: '/study',
+            name: 'study',
+            icon: 'dashboard',
+            level:'1',
+            routes: [
+                {
+                    path: '/study/table',
+                    name: 'table',
+                    component: './Table/Table',
+                },
+                {
+                    path: '/study/Components',
+                    name: 'Components',
+                    component: './Components/Components',
+                },
+            ],
+        },
+      // dashboard
       {
         path: '/dashboard',
         name: 'dashboard',
