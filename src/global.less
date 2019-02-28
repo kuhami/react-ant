@@ -34,3 +34,35 @@ ol {
 .hide {
   display: none !important;
 }
+.antd-pro-layouts-basic-layout-content{
+
+  /******多标签tabs样式 开始******/
+    .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-nav-container{
+      font-size: 12px;
+      height: 32px !important;
+    }
+    .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+      border-radius: 0px;
+      border-top: 0px;
+      line-height: 30px;
+      .anticon-close{
+        display: none;
+      }
+    }
+    .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+      padding-bottom: 0px;
+      .anticon-close{
+        display: inline-block;
+      }
+    }
+    .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab:hover{
+      padding-left: 20px;
+      padding-right: 20px;
+      .anticon-close{
+        color: #333 !important;
+        display: inline-block;
+      }
+    }
+  /******多标签tabs样式  结束******/
+
+}
