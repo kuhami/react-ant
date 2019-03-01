@@ -237,7 +237,8 @@ class BasicLayout extends React.PureComponent {
       console.log(this);
     const tabLists = this.updateTreeList(menuData);
     const {tabListKey,tabList,activeRemove} =  this.state
-    this.setState({ activeKey:location.pathname });
+    // this.setState({ activeKey:location.pathname });
+    this.state.activeKey = location.pathname;
       tabLists.map((v) => {
           if(v.key == location.pathname && !activeRemove){
               v.content = children
@@ -255,7 +256,8 @@ class BasicLayout extends React.PureComponent {
       if(location.pathname == '/'){
           router.push('/home/home')
       }
-      this.setState({ activeRemove:false });
+      // this.setState({ activeRemove:false });
+      this.state.activeRemove = false;
       this.state.tabListKey = tabList.map((va)=>va.key)
       const isTop = PropsLayout === 'topmenu';
      const routerConfig = this.getRouterAuthority(pathname, routes);
