@@ -19,7 +19,6 @@ export default class StepForm extends PureComponent {
     const { pathname } = location;
     const pathList = pathname.split('/');
     const current = this.getParam('current');
-    console.log(current);
     this.setState({
       current:current
     })
