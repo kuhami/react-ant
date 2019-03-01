@@ -24,21 +24,22 @@ class Step2 extends React.PureComponent {
     const { form, data, dispatch, submitting } = this.props;
     const { getFieldDecorator, validateFields } = form;
     const onPrev = () => {
-      router.push('/form/step-form/info');
+      router.push('/form/step-form?current=1');
     };
     const onValidateForm = e => {
       e.preventDefault();
-      validateFields((err, values) => {
-        if (!err) {
-          dispatch({
-            type: 'form/submitStepForm',
-            payload: {
-              ...data,
-              ...values,
-            },
-          });
-        }
-      });
+        router.push('/form/step-form?current=3');
+      // validateFields((err, values) => {
+      //   if (!err) {
+      //     dispatch({
+      //       type: 'form/submitStepForm',
+      //       payload: {
+      //         ...data,
+      //         ...values,
+      //       },
+      //     });
+      //   }
+      // });
     };
     return (
       <Form layout="horizontal" className={styles.stepForm}>
