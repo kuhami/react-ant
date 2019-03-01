@@ -81,8 +81,10 @@ export default [
             hideChildrenInMenu: true,
             routes: [
               {
-                path: '/form/step-form',
-                redirect: '/form/step-form/info',
+                // path: '/form/step-form',
+                // redirect: '/form/step-form/info',
+                path: '/form/step-form?current=1',
+                component: './Forms/StepForm/Step1',
               },
               {
                 path: '/form/step-form/info',
