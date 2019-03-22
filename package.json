@@ -81,7 +81,6 @@
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^2.0.1",
-    "husky": "^1.2.0",
     "jest-puppeteer": "^3.5.1",
     "lint-staged": "^8.1.0",
     "merge-umi-mock-data": "^0.0.3",
@@ -124,10 +123,5 @@
     "src/**/*.less",
     "config/**/*.js*",
     "scripts/**/*.js"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged"
-    }
-  }
+  ]
 }
