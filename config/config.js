@@ -57,6 +57,7 @@ export default {
   define: {
     APP_TYPE: process.env.APP_TYPE || '',
   },
+  publicPath: '',
   targets: {
     ie: 11,
   },
