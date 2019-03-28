@@ -11,10 +11,13 @@ import styles from './Header.less';
 const { Header } = Layout;
 
 class HeaderView extends PureComponent {
-  state = {
-    visible: true,
-  };
-
+  constructor(props){
+    super(props);
+    console.log(props);
+    this.state = {
+      visible: true,
+    };
+  }
   static getDerivedStateFromProps(props, state) {
     if (!props.autoHideHeader && !state.visible) {
       return {
@@ -56,16 +59,20 @@ class HeaderView extends PureComponent {
 
   handleMenuClick = ({ key }) => {
     const { dispatch } = this.props;
+    const {onHandlePage} = this.props.location;
     if (key === 'userCenter') {
       router.push('/account/center');
+      onHandlePage({key:'/account/center'});
       return;
     }
     if (key === 'triggerError') {
       router.push('/exception/trigger');
+      onHandlePage({key:'/exception/trigger'});
       return;
     }
     if (key === 'userinfo') {
-      router.push('/account/settings/base');
+      router.push('/account/settings');
+      onHandlePage({key:'/account/settings'});
       return;
     }
     if (key === 'logout') {

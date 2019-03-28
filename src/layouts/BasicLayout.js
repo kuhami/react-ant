@@ -192,10 +192,11 @@ class BasicLayout extends React.PureComponent {
   };
 
   onHandlePage =(e)=>{//点击左侧菜单
+    console.log(this);
     const {menuData} = this.props,{key} = e;
     const tabLists = this.updateTreeList(menuData);
     const {tabListKey,tabList} =  this.state
-
+    router.push(key)
     this.setState({
       activeKey:key
     })
@@ -212,6 +213,7 @@ class BasicLayout extends React.PureComponent {
             //     props:Object.assign({},v.content.props,{onHandlePage:this.onHandlePage})
             //   }
             // }
+            console.log(v);
             this.state.tabList.push(v)
           }
         }
@@ -323,7 +325,7 @@ class BasicLayout extends React.PureComponent {
     const isTop = PropsLayout === 'topmenu';
     const routerConfig = this.getRouterAuthority(pathname, routes);
     const contentStyle = !fixedHeader ? { paddingTop: 0 } : {};
-
+    this.props.location.onHandlePage = this.onHandlePage;
     const menu = (
       <Menu onClick={this.onClickHover}>
         <Menu.Item key="1">关闭当前标签页</Menu.Item>
