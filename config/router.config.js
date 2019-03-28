@@ -226,7 +226,7 @@ export default [
           {
             path: '/exception/trigger',
             name: 'trigger',
-            hideInMenu: true,
+            // hideInMenu: true,
             component: './Exception/TriggerException',
           },
         ],
