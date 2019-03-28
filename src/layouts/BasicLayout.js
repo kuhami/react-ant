@@ -54,8 +54,8 @@ const query = {
 class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
-    const {menuData} = this.props,routeKey = '/home/home'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
-    const tabLists = this.updateTreeList(menuData);
+    const {routes} = props.route,routeKey = '/dashboard/analysis'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
+    const tabLists = this.updateTree(routes);
     let tabList=[];
     tabLists.map((v) => {
       if(v.key === routeKey){
@@ -65,7 +65,6 @@ class BasicLayout extends React.PureComponent {
         }
       }
     });
-
     this.state = ({
         tabList:tabList,
         tabListKey:[routeKey],
@@ -94,6 +93,24 @@ class BasicLayout extends React.PureComponent {
       payload: { routes, authority },
     });
   }
+
+  updateTree = data => {
+    const treeData = data;
+    const treeList = [];
+    // 递归获取树列表
+    const getTreeList = data => {
+      data.forEach(node => {
+        if(!node.level){
+          treeList.push({ tab: node.name, key: node.path,locale:node.locale,closable:true,content:node.component });
+        }
+        if (node.routes && node.routes.length > 0) { //!node.hideChildrenInMenu &&
+          getTreeList(node.routes);
+        }
+      });
+    };
+    getTreeList(treeData);
+    return treeList;
+  };
 
   componentDidUpdate(preProps) {
     // After changing to phone mode,
@@ -349,9 +366,6 @@ class BasicLayout extends React.PureComponent {
             {...this.props}
           />
           <Content className={styles.content} style={contentStyle}>
-              {/*<Authorized authority={routerConfig} noMatch={<Exception403 />}>*/}
-                  {/*{children}*/}
-              {/*</Authorized>*/}
                   {this.state.tabList && this.state.tabList.length ? (
                       <Tabs
                           // className={styles.tabs}
