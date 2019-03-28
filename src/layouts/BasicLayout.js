@@ -54,7 +54,7 @@ const query = {
 class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
-    const {routes} = props.route,routeKey = '/dashboard/analysis'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
+    const {routes} = props.route,routeKey = '/home/home'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
     const tabLists = this.updateTree(routes);
     let tabList=[];
     tabLists.map((v) => {
