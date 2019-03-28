@@ -192,7 +192,6 @@ class BasicLayout extends React.PureComponent {
   };
 
   onHandlePage =(e)=>{//点击左侧菜单
-    console.log(this);
     const {menuData} = this.props,{key} = e;
     const tabLists = this.updateTreeList(menuData);
     const {tabListKey,tabList} =  this.state
@@ -213,7 +212,6 @@ class BasicLayout extends React.PureComponent {
             //     props:Object.assign({},v.content.props,{onHandlePage:this.onHandlePage})
             //   }
             // }
-            console.log(v);
             this.state.tabList.push(v)
           }
         }
