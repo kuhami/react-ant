@@ -13,7 +13,6 @@ const { Header } = Layout;
 class HeaderView extends PureComponent {
   constructor(props){
     super(props);
-    console.log(props);
     this.state = {
       visible: true,
     };
