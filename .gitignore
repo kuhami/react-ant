@@ -10,6 +10,7 @@ _roadhog-api-doc
 
 /dist
 /.vscode
+/.circleci
 
 # misc
 .DS_Store
