@@ -16,12 +16,9 @@
 
 </div>
 
-- 预览：http://preview.pro.ant.design
-- 首页：http://pro.ant.design/index-cn
-- 使用文档：http://pro.ant.design/docs/getting-started-cn
-- 更新日志: http://pro.ant.design/docs/changelog-cn
-- 常见问题：http://pro.ant.design/docs/faq-cn
-- 国内镜像：http://ant-design-pro.gitee.io
+- [Ant Tabs 源码地址](https://github.com/kuhami/react-ant)
+- [Ant Tabs 文档地址](https://kuhami.github.io/KroInterview/antTabs.html#/AntTabs)
+- [Ant Tabs 更新日志](https://kuhami.github.io/KroInterview/antTabs.html#/AntTabs)
 
 ## 特性
 
