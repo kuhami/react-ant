@@ -28,4 +28,5 @@ export default {
   'app.setting.copyinfo': '拷貝成功，請到 src/defaultSettings.js 中替換默認配置',
   'app.setting.production.hint':
     '配置欄只在開發環境用於預覽，生產環境不會展現，請拷貝後手動修改配置文件',
+  'app.setting.hidenAntTabs': '隐藏 Ant-Tabs',
 };
