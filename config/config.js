@@ -21,12 +21,13 @@ const plugins = [
       dynamicImport: {
         loadingComponent: './components/PageLoading/index',
       },
-      pwa: {
-        workboxPluginMode: 'InjectManifest',
-        workboxOptions: {
-          importWorkboxFrom: 'local',
-        },
-      },
+      // pwa: { //报错：pwacompat.min.js:1 Uncaught SyntaxError: Unexpected token <
+      //   workboxPluginMode: 'InjectManifest',
+      //   workboxOptions: {
+      //     importWorkboxFrom: 'local',
+      //   },
+      // },
+      pwa:false,
       ...(!process.env.TEST && os.platform() === 'darwin'
         ? {
             dll: {
