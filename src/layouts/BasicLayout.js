@@ -203,16 +203,14 @@ class BasicLayout extends React.PureComponent {
       if(v.key === key){
         if(tabList.length === 0){
           v.closable = false
-          this.state.tabList.push(v)
+          this.setState({
+            tabList:[...tabList,v]
+          })
         }else{
           if(!tabListKey.includes(v.key)){
-            // if(v.content){
-            //   v.content = {
-            //     ...v.content,
-            //     props:Object.assign({},v.content.props,{onHandlePage:this.onHandlePage})
-            //   }
-            // }
-            this.state.tabList.push(v)
+            this.setState({
+              tabList:[...tabList,v]
+            })
           }
         }
       }
@@ -316,7 +314,7 @@ class BasicLayout extends React.PureComponent {
       fixedHeader,
       hidenAntTabs,
     } = this.props;
-    console.log(this.props);
+    console.log(this.state.tabList);
     let {activeKey,routeKey} = this.state;
       if(pathname === '/'){
           // router.push(routeKey)
