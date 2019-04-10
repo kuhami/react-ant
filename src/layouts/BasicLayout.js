@@ -314,7 +314,9 @@ class BasicLayout extends React.PureComponent {
       breadcrumbNameMap,
       route: { routes },
       fixedHeader,
+      hidenAntTabs,
     } = this.props;
+    console.log(this.props);
     let {activeKey,routeKey} = this.state;
       if(pathname === '/'){
           // router.push(routeKey)
@@ -366,29 +368,33 @@ class BasicLayout extends React.PureComponent {
             {...this.props}
           />
           <Content className={styles.content} style={contentStyle}>
-                  {this.state.tabList && this.state.tabList.length ? (
-                      <Tabs
-                          // className={styles.tabs}
-                          activeKey={activeKey}
-                          onChange={this.onChange}
-                          tabBarExtraContent={operations}
-                          tabBarStyle={{background:'#fff'}}
-                          tabPosition="top"
-                          tabBarGutter={-1}
-                          hideAdd
-                          type="editable-card"
-                          onEdit={this.onEdit}
-                      >
-                          {this.state.tabList.map(item => (
-                              <TabPane tab={item.tab} key={item.key} closable={item.closable}>
-                                <Authorized authority={routerConfig} noMatch={<Exception403 />}>
-                                  {/*{item.content}*/}
-                                  <Route key={item.key} path={item.path} component={item.content} exact={item.exact} />
-                                </Authorized>
-                              </TabPane>
-                          ))}
-                      </Tabs>
-                  ) : null}
+            {hidenAntTabs ?
+              (<Authorized authority={routerConfig} noMatch={<Exception403 />}>
+              {children}
+                </Authorized>) :
+              (this.state.tabList && this.state.tabList.length ? (
+              <Tabs
+                // className={styles.tabs}
+                activeKey={activeKey}
+                onChange={this.onChange}
+                tabBarExtraContent={operations}
+                tabBarStyle={{background:'#fff'}}
+                tabPosition="top"
+                tabBarGutter={-1}
+                hideAdd
+                type="editable-card"
+                onEdit={this.onEdit}
+              >
+                {this.state.tabList.map(item => (
+                  <TabPane tab={item.tab} key={item.key} closable={item.closable}>
+                    <Authorized authority={routerConfig} noMatch={<Exception403 />}>
+                      {/*{item.content}*/}
+                      <Route key={item.key} path={item.path} component={item.content} exact={item.exact} />
+                    </Authorized>
+                  </TabPane>
+                ))}
+              </Tabs>
+            ) : null)}
           </Content>
           <Footer />
         </Layout>

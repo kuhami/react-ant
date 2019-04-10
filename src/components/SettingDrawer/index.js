@@ -30,7 +30,7 @@ class SettingDrawer extends PureComponent {
 
   getLayoutSetting = () => {
     const {
-      setting: { contentWidth, fixedHeader, layout, autoHideHeader, fixSiderbar },
+      setting: { contentWidth, fixedHeader, layout, autoHideHeader, fixSiderbar,hidenAntTabs },
     } = this.props;
     return [
       {
@@ -87,6 +87,16 @@ class SettingDrawer extends PureComponent {
           />
         ),
       },
+      {
+        title: formatMessage({ id: 'app.setting.hidenAntTabs' }),
+        action: (
+          <Switch
+            size="small"
+            checked={!!hidenAntTabs}
+            onChange={checked => this.changeSetting('hidenAntTabs', checked)}
+          />
+        ),
+      },
     ];
   };
 
@@ -128,6 +138,7 @@ class SettingDrawer extends PureComponent {
 
   render() {
     const { setting } = this.props;
+    console.log(setting);
     const { navTheme, primaryColor, layout, colorWeak } = setting;
     const { collapse } = this.state;
     return (
