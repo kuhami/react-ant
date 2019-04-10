@@ -1,5 +1,11 @@
 export default {
   'menu.home': '首頁',
+  'menu.libraries': '社区精选组件',
+  'menu.libraries.drag': '拖拽',
+  'menu.libraries.braft-editor': '富文本编译器',
+  'menu.component': '组件封装',
+  'menu.component.table': '多功能Table',
+  'menu.component.select-tree': 'SelectTree',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': '分析頁',
   'menu.dashboard.monitor': '監控頁',
