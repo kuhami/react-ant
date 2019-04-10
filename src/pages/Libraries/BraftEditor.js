@@ -8,7 +8,7 @@ export default class BasicDemo extends Component {
     super(props);
 
     this.state = {
-      editorState: BraftEditor.createEditorState('<p>Hello <b>World!</b><br/><br/><a href="https://github.com/kuhami/react-ant-pro" target="_blank" >MY Github 欢迎 Start（https://github.com/kuhami/react-ant-pro）</a>😉</p>'), // 设置编辑器初始内容
+      editorState: BraftEditor.createEditorState('<p>Hello <b>World!</b><br/><br/><a href="https://github.com/kuhami/react-ant-pro" target="_blank" >MY Github 欢迎 Start（https://github.com/kuhami/react-ant）</a>😉</p>'), // 设置编辑器初始内容
       outputHTML: '<p></p>'
     }
   }
