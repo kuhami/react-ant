@@ -1,12 +1,13 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types'
 import { Table,Card,Tabs, Button } from 'antd';
-import TreeCheck from 'components/TreeCheck'; // aware of the relative path
+import TreeCheck from '@/components/TreeCheck'; // aware of the relative path
 const TabPane = Tabs.TabPane;
 
-export default class SelectTree extends Component {
+export default class Components extends Component {
     constructor(props){
         super(props);
+
         const columns = [{
             title: '参数	',
             dataIndex: 'Param',
@@ -122,9 +123,11 @@ export default class SelectTree extends Component {
     componentDidMount() {
 
     }
+
     onCheckedKeyChange = (checkedArrs)=>{
         console.log(checkedArrs);
     }
+
     render() {
         const treeData = [{
             label: '全部',
@@ -167,33 +170,31 @@ export default class SelectTree extends Component {
         }];
 
         return (
-            <div>
-                <Card title="多选SelectTree"  bordered={false}>
-                    <TreeCheck
-                        treeData={treeData}
-                        isShowSearch={true}
-                        spanName={'多选Select：'}
-                        getAllNodes={true}
-                        //LabelAndValue={['title','key']}
-                        //checkedKeys={['00','01']}
-                        multiple={true}
-                        onCheckedKeyChange={(checkedArrs) => this.onCheckedKeyChange(checkedArrs)}/>
+          <Card title="多选SelectTree"  bordered={false}>
+              <TreeCheck
+                treeData={treeData}
+                isShowSearch={true}
+                spanName={'多选Select：'}
+                getAllNodes={true}
+                //LabelAndValue={['title','key']}
+                //checkedKeys={['00','01']}
+                multiple={true}
+                onCheckedKeyChange={(checkedArrs) => this.onCheckedKeyChange(checkedArrs)}/>
 
-                    <h3>API</h3>
-                    <p>TreeCheck 为多选SelectTree，本组件为适应特殊场景而封装。</p>
-                    <Table columns={this.state.columns} dataSource={this.state.dataSource} pagination={false} />
-                </Card>
-            </div>
+              <h3>API</h3>
+              <p>TreeCheck 为多选SelectTree，本组件为适应特殊场景而封装。</p>
+              <Table columns={this.state.columns} dataSource={this.state.dataSource} pagination={false} />
+          </Card>
         );
     }
 }
 
 // 组件必须传递参数
-SelectTree.propTypes = {
+Components.propTypes = {
     bordered:PropTypes.bool,
 };
 
 // 设置默认属性
-SelectTree.defaultProps = {
+Components.defaultProps = {
     bordered:true,//是否展示外边框和列边框
 };

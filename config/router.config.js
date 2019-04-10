@@ -17,24 +17,42 @@ export default [
     Routes: ['src/pages/Authorized'],
     authority: ['admin', 'user'],
     routes: [
-      // dashboard
       { path: '/', redirect: '/dashboard/analysis' },
-      // study
+      // 社区精选组件
       {
-            path: '/study',
-            name: 'study',
+        path: '/libraries',
+        name: '社区精选组件',
+        icon: 'laptop',
+        level:'1',
+        routes: [
+          {
+            path: '/libraries/drag',
+            name: '拖拽',
+            component: './Libraries/Drag',
+          },
+          {
+            path: '/libraries/braft-editor',
+            name: '富文本编译器',
+            component: './Libraries/BraftEditor',
+          },
+        ],
+      },
+      // Component
+      {
+            path: 'component',
+            name: '组件封装',
             icon: 'laptop',
             level:'1',
             routes: [
                 {
-                    path: '/study/table',
-                    name: 'table',
-                    component: './Table/Table',
+                    path: '/component/table',
+                    name: '多功能Table',
+                    component: './Component/Table',
                 },
                 {
-                    path: '/study/Components',
-                    name: 'Components',
-                    component: './Components/Components',
+                    path: '/component/selectTree',
+                    name: 'SelectTree',
+                    component: './Component/SelectTree',
                 },
             ],
         },
