@@ -21,18 +21,18 @@ export default [
       // 社区精选组件
       {
         path: '/libraries',
-        name: '社区精选组件',
+        name: 'libraries', //不能用汉字，只能用英文
         icon: 'laptop',
         level:'1',
         routes: [
           {
             path: '/libraries/drag',
-            name: '拖拽',
+            name: 'drag',
             component: './Libraries/Drag',
           },
           {
             path: '/libraries/braft-editor',
-            name: '富文本编译器',
+            name: 'braft-editor',
             component: './Libraries/BraftEditor',
           },
         ],
@@ -40,18 +40,18 @@ export default [
       // Component
       {
             path: 'component',
-            name: '组件封装',
+            name: 'component',
             icon: 'laptop',
             level:'1',
             routes: [
                 {
                     path: '/component/table',
-                    name: '多功能Table',
+                    name: 'table',
                     component: './Component/Table',
                 },
                 {
-                    path: '/component/selectTree',
-                    name: 'SelectTree',
+                    path: '/component/select-tree',
+                    name: 'select-tree',
                     component: './Component/SelectTree',
                 },
             ],
