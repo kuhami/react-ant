@@ -138,7 +138,6 @@ class SettingDrawer extends PureComponent {
 
   render() {
     const { setting } = this.props;
-    console.log(setting);
     const { navTheme, primaryColor, layout, colorWeak } = setting;
     const { collapse } = this.state;
     return (
