@@ -209,15 +209,16 @@ class BasicLayout extends React.PureComponent {
         }else{
           if(!tabListKey.includes(v.key)){
             this.setState({
-              tabList:[...tabList,v]
+              tabList:[...tabList,v],
+              tabListKey:[...tabListKey,v.key]
             })
           }
         }
       }
     })
-    this.setState({
-      tabListKey:tabList.map((va)=>va.key)
-    })
+    // this.setState({
+    //   tabListKey:this.state.tabList.map((va)=>va.key)
+    // })
   }
 
     // 切换 tab页 router.push(key);
@@ -238,17 +239,18 @@ class BasicLayout extends React.PureComponent {
                 lastIndex = i - 1;
             }
         });
-        const tabList = []
+        const tabList = [],tabListKey=[]
         this.state.tabList.map(pane => {
           if(pane.key !== targetKey){
               tabList.push(pane)
+              tabListKey.push(pane.key)
           }
         });
         if (lastIndex >= 0 && activeKey === targetKey) {
             activeKey = tabList[lastIndex].key;
         }
         router.push(activeKey)
-        this.setState({ tabList, activeKey });
+        this.setState({ tabList, activeKey,tabListKey });
     }
 
     updateTreeList = data => {
@@ -314,7 +316,6 @@ class BasicLayout extends React.PureComponent {
       fixedHeader,
       hidenAntTabs,
     } = this.props;
-    console.log(this.state.tabList);
     let {activeKey,routeKey} = this.state;
       if(pathname === '/'){
           // router.push(routeKey)
