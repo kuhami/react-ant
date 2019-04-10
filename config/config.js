@@ -4,7 +4,7 @@ import pageRoutes from './router.config';
 import webpackPlugin from './plugin.config';
 import defaultSettings from '../src/defaultSettings';
 import slash from 'slash2';
-
+const {pwa} = defaultSettings;
 const plugins = [
   [
     'umi-plugin-react',
@@ -21,13 +21,12 @@ const plugins = [
       dynamicImport: {
         loadingComponent: './components/PageLoading/index',
       },
-      // pwa: { //报错：pwacompat.min.js:1 Uncaught SyntaxError: Unexpected token <
-      //   workboxPluginMode: 'InjectManifest',
-      //   workboxOptions: {
-      //     importWorkboxFrom: 'local',
-      //   },
-      // },
-      pwa:false,
+      pwa: pwa ? { //报错：pwacompat.min.js:1 Uncaught SyntaxError: Unexpected token <
+        workboxPluginMode: 'InjectManifest',
+        workboxOptions: {
+          importWorkboxFrom: 'local',
+        },
+      }:false,
       ...(!process.env.TEST && os.platform() === 'darwin'
         ? {
             dll: {
@@ -58,7 +57,6 @@ export default {
   define: {
     APP_TYPE: process.env.APP_TYPE || '',
   },
-  publicPath: '',
   targets: {
     ie: 11,
   },
