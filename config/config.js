@@ -4,7 +4,7 @@ import pageRoutes from './router.config';
 import webpackPlugin from './plugin.config';
 import defaultSettings from '../src/defaultSettings';
 import slash from 'slash2';
-const {pwa} = defaultSettings;
+const { primaryColor,pwa } = defaultSettings;
 const plugins = [
   [
     'umi-plugin-react',
@@ -62,10 +62,11 @@ export default {
   },
   // 路由配置
   routes: pageRoutes,
+  publicPath:'./',
   // Theme for antd
   // https://ant.design/docs/react/customize-theme-cn
   theme: {
-    'primary-color': defaultSettings.primaryColor,
+    'primary-color': primaryColor,
   },
   externals: {
     '@antv/data-set': 'DataSet',
