@@ -90,7 +90,7 @@ export default class GlobalHeaderRight extends PureComponent {
       theme,
     } = this.props;
     currentUser = {
-      name: 'Mr.liu1',
+      name: 'Mr.liu',
         avatar: 'https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png',
       userid: '00000001',
       email: 'antdesign@alipay.com',
