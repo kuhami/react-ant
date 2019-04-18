@@ -196,7 +196,7 @@ export default class Tables extends Component {
             }
         }
         return (
-          <Card title="多功能Table"  bordered={false}>
+          <Card title="多功能Table-AntTableFinder"  bordered={false}>
               <AntTableFinder
                 {...dataFinder}
               />
