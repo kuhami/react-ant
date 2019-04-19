@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types'
 import { Table,Tooltip,Button,Input,Skeleton,Form, Row, Col, Icon,Select,InputNumber,DatePicker,message } from 'antd';
 import moment from 'moment';
-import $ from 'jquery';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
@@ -76,7 +75,7 @@ export default class AntTableFinder extends Component {
             }
         });
 
-        totalWidth = !$.isEmptyObject(rowSelection) ? (rowSelection.columnWidth ? totalWidth + rowSelection.columnWidth:totalWidth+60) : totalWidth; // 计算 多选框的宽度
+        totalWidth = rowSelection ? (rowSelection.columnWidth ? totalWidth + rowSelection.columnWidth:totalWidth+60) : totalWidth; // 计算 多选框的宽度
         columns.map((v)=>{
             totalWidth = Object.prototype.toString.call(v.width) === "[object String]" ? (v.width).replace('px','') - 0 + totalWidth : v.width + totalWidth
         }) // 计算table总宽度
@@ -87,7 +86,7 @@ export default class AntTableFinder extends Component {
             size:'small',
         }:false ;
 
-        rowSelection = !$.isEmptyObject(rowSelection) ? {
+        rowSelection = rowSelection ? {
             ...rowSelection
           }:null;
         this.setState({
@@ -311,7 +310,7 @@ AntTableFinder.defaultProps = {
     bordered:true,//是否展示外边框和列边框
     extColumnAttr:{}, //扩展可重新渲染title
     pagination:{},// false 不显示分页 true or 不设置 前端分页 ; {}
-    rowSelection:{},
+    rowSelection:null,
     columns:[], //扩展finder 列
     onChangePagination:function() {
         //点击页数回调
