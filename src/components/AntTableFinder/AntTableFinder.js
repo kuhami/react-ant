@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import PropTypes from 'prop-types'
 import { Table,Tooltip,Button,Input,Skeleton,Form, Row, Col, Icon,Select,InputNumber,DatePicker,message } from 'antd';
 import moment from 'moment';
+import $ from 'jquery';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const RangePicker = DatePicker.RangePicker;
@@ -11,12 +12,13 @@ export default class AntTableFinder extends Component {
     constructor(props){
       super(props);
       console.log(props)
-
+        const {tableHeight} = this.props;
         this.state={
             count: 3,
             visible:false, //Modal 默认false
             expandForm:false,
-            pageSize:10
+            pageSize:10,
+            tableHeight
         }
     }
     componentDidMount() {
@@ -74,7 +76,7 @@ export default class AntTableFinder extends Component {
             }
         });
 
-        totalWidth = rowSelection ? (rowSelection.columnWidth ? totalWidth + rowSelection.columnWidth:totalWidth+60) : totalWidth; // 计算 多选框的宽度
+        totalWidth = !$.isEmptyObject(rowSelection) ? (rowSelection.columnWidth ? totalWidth + rowSelection.columnWidth:totalWidth+60) : totalWidth; // 计算 多选框的宽度
         columns.map((v)=>{
             totalWidth = Object.prototype.toString.call(v.width) === "[object String]" ? (v.width).replace('px','') - 0 + totalWidth : v.width + totalWidth
         }) // 计算table总宽度
@@ -85,9 +87,9 @@ export default class AntTableFinder extends Component {
             size:'small',
         }:false ;
 
-        rowSelection = rowSelection ? {
+        rowSelection = !$.isEmptyObject(rowSelection) ? {
             ...rowSelection
-          }:false;
+          }:null;
         this.setState({
             columns,
             dataSource,
@@ -258,8 +260,7 @@ export default class AntTableFinder extends Component {
         return this.state.expandForm ? this.renderAdvancedForm() : this.renderSimpleForm();
     }
     render() {
-        const {columns,dataSource,pagination,totalWidth,rowSelection} = this.state;
-        console.log(pagination && pagination.pageSize);
+        const {columns,dataSource,pagination,totalWidth,rowSelection,tableHeight} = this.state;
         let len = (dataSource&&pagination) && ((dataSource.length - 1)/(pagination.pageSize) > 1 ? (pagination.pageSize)-1 : dataSource.length - 1)
         return (
             <div>
@@ -277,7 +278,7 @@ export default class AntTableFinder extends Component {
                                    loading={false}
                                    pagination={pagination}
                                    bordered={this.state.bordered}
-                                   scroll={{ x: totalWidth,y:'calc(100vh - 400px)' }}
+                                   scroll={{ x: totalWidth,y:'calc(100vh - '+tableHeight+'px)' }}
 
                                    // onHeaderRow={(column) => {
                                    //     return {
@@ -298,10 +299,11 @@ AntTableFinder.propTypes = {
     bordered:PropTypes.bool,
     extColumnAttr:PropTypes.object,
     pagination:PropTypes.object,
-    rowSelection:PropTypes.bool,
+    rowSelection:PropTypes.object,
     columns:PropTypes.array,
     onChangePagination:PropTypes.func,
     onShowSizeChange:PropTypes.func,
+    tableHeight:PropTypes.number
 };
 
 // 设置默认属性
@@ -309,12 +311,13 @@ AntTableFinder.defaultProps = {
     bordered:true,//是否展示外边框和列边框
     extColumnAttr:{}, //扩展可重新渲染title
     pagination:{},// false 不显示分页 true or 不设置 前端分页 ; {}
-    rowSelection:false,
+    rowSelection:{},
     columns:[], //扩展finder 列
     onChangePagination:function() {
         //点击页数回调
     },
     onShowSizeChange:function() {
         //改变每页显示条目数回调
-    }
+    },
+    tableHeight:340, //table 的高度
 };
