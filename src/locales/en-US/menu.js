@@ -3,6 +3,7 @@ export default {
   'menu.libraries': '社区精选组件',
   'menu.libraries.drag': '拖拽',
   'menu.libraries.braft-editor': '富文本编译器',
+  'menu.libraries.react-color': '拾色器',
   'menu.component': '组件封装',
   'menu.component.table': '多功能Table',
   'menu.component.select-tree': 'SelectTree',
