@@ -4,6 +4,10 @@ import router from 'umi/router';
 import { FormattedMessage } from 'umi/locale';
 import { Menu } from 'antd';
 import GridContent from '@/components/PageHeaderWrapper/GridContent';
+import BaseView from './BaseView';
+import SecurityView from './SecurityView';
+import BindingView from './BindingView';
+import NotificationView from './NotificationView';
 import styles from './Info.less';
 
 const { Item } = Menu;
@@ -35,18 +39,20 @@ class Info extends Component {
       mode: 'inline',
       menuMap,
       selectKey: menuMap[key] ? key : 'base',
+      Component:<BaseView/>
     };
   }
 
-  static getDerivedStateFromProps(props, state) {
-    const { match, location } = props;
-    let selectKey = location.pathname.replace(`${match.path}/`, '');
-    selectKey = state.menuMap[selectKey] ? selectKey : 'base';
-    if (selectKey !== state.selectKey) {
-      return { selectKey };
-    }
-    return null;
-  }
+  // static getDerivedStateFromProps(props, state) {
+  //   const { match, location } = props;
+  //   let selectKey = location.pathname.replace(`${match.path}/`, '');
+  //   selectKey = state.menuMap[selectKey] ? selectKey : 'base';
+  //   console.log(selectKey);
+  //   if (selectKey !== state.selectKey) {
+  //     return { selectKey };
+  //   }
+  //   return null;
+  // }
 
   componentDidMount() {
     window.addEventListener('resize', this.resize);
@@ -69,8 +75,26 @@ class Info extends Component {
 
   selectKey = ({ key }) => {
     // router.push(`/account/settings/${key}`);
+    let Component;
+    switch (key) {
+      case 'base':
+        Component = <BaseView/>
+        break;
+      case 'security':
+        Component = <SecurityView/>
+        break;
+      case 'binding':
+        Component = <BindingView/>
+        break;
+      case 'notification':
+        Component = <NotificationView/>
+        break;
+      default:
+        break;
+    }
     this.setState({
       selectKey: key,
+      Component
     });
   };
 
@@ -98,7 +122,7 @@ class Info extends Component {
     if (!currentUser.userid) {
       return '';
     }
-    const { mode, selectKey } = this.state;
+    const { mode, selectKey,Component } = this.state;
     return (
       <GridContent>
         <div
@@ -114,7 +138,7 @@ class Info extends Component {
           </div>
           <div className={styles.right}>
             <div className={styles.title}>{this.getRightTitle()}</div>
-            {children}
+            {Component}
           </div>
         </div>
       </GridContent>
