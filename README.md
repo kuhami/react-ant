@@ -38,6 +38,7 @@
 - 社区精选组件
   - 拖拽
   - 富文本编译器
+  - 拾色器
 - 组件封装
   - 多功能 table
   - SelectTree
@@ -84,8 +85,8 @@ $ npm start         # 访问 http://localhost:8000
 
 ```bash
 # preview 
-$ docker pull chenshuai2144/ant-design-pro
-$ docker run -p 80:80 chenshuai2144/ant-design-pro
+$ docker pull kuhami/react-ant
+$ docker run -p 80:80 kuhami/react-ant
 # open http://localhost
 
 # dev 
@@ -116,6 +117,6 @@ $ npm run docker-prod:build
 
 我们非常欢迎你的贡献，你可以通过以下方式和我们一起共建 :smiley:：
 
-- 在你的公司或个人项目中使用 Ant Design Pro。
-- 通过 [Issue](http://github.com/ant-design/ant-design-pro/issues) 报告 bug 或进行咨询。
-- 提交 [Pull Request](http://github.com/ant-design/ant-design-pro/pulls) 改进 Pro 的代码。
+- 在你的公司或个人项目中使用 React Ant。
+- 通过 [Issue](https://github.com/kuhami/react-ant/issues) 报告 bug 或进行咨询。
+- 提交 [Pull Request](https://github.com/kuhami/react-ant/pulls) 改进 Pro 的代码。
