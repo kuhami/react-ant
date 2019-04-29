@@ -4,6 +4,9 @@ import Link from 'umi/link';
 import router from 'umi/router';
 import { Card, Row, Col, Icon, Avatar, Tag, Divider, Spin, Input } from 'antd';
 import GridContent from '@/components/PageHeaderWrapper/GridContent';
+import Articles from './Articles';
+import Applications from './Applications';
+import Projects from './Projects';
 import styles from './Center.less';
 
 @connect(({ loading, user, project }) => ({
@@ -18,6 +21,7 @@ class Center extends PureComponent {
     newTags: [],
     inputVisible: false,
     inputValue: '',
+    key:'articles',
   };
 
   componentDidMount() {
@@ -37,20 +41,21 @@ class Center extends PureComponent {
   }
 
   onTabChange = key => {
-    const { match } = this.props;
-    switch (key) {
-      case 'articles':
-        router.push(`${match.url}/articles`);
-        break;
-      case 'applications':
-        router.push(`${match.url}/applications`);
-        break;
-      case 'projects':
-        router.push(`${match.url}/projects`);
-        break;
-      default:
-        break;
-    }
+    // const { match } = this.props;
+    this.setState({ key: key });
+    // switch (key) {
+    //   case 'articles':
+    //     router.push(`${match.url}/articles`);
+    //     break;
+    //   case 'applications':
+    //     router.push(`${match.url}/applications`);
+    //     break;
+    //   case 'projects':
+    //     router.push(`${match.url}/projects`);
+    //     break;
+    //   default:
+    //     break;
+    // }
   };
 
   showInput = () => {
@@ -91,7 +96,7 @@ class Center extends PureComponent {
       location,
       children,
     } = this.props;
-
+    console.log(this.state.key);
     const operationTabList = [
       {
         key: 'articles',
@@ -200,11 +205,12 @@ class Center extends PureComponent {
               className={styles.tabsCard}
               bordered={false}
               tabList={operationTabList}
-              activeTabKey={location.pathname.replace(`${match.path}/`, '')}
+              activeTabKey={this.state.key}
               onTabChange={this.onTabChange}
               loading={listLoading}
             >
-              {children}
+              {this.state.key ==='articles' ? <Articles/> : (this.state.key === 'applications' ? <Applications/>:<Projects/>)}
+
             </Card>
           </Col>
         </Row>
