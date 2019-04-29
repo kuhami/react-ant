@@ -68,7 +68,7 @@ class Info extends Component {
   };
 
   selectKey = ({ key }) => {
-    router.push(`/account/settings/${key}`);
+    // router.push(`/account/settings/${key}`);
     this.setState({
       selectKey: key,
     });

@@ -41,21 +41,9 @@ class Center extends PureComponent {
   }
 
   onTabChange = key => {
-    // const { match } = this.props;
-    this.setState({ key: key });
-    // switch (key) {
-    //   case 'articles':
-    //     router.push(`${match.url}/articles`);
-    //     break;
-    //   case 'applications':
-    //     router.push(`${match.url}/applications`);
-    //     break;
-    //   case 'projects':
-    //     router.push(`${match.url}/projects`);
-    //     break;
-    //   default:
-    //     break;
-    // }
+    this.setState({
+      key: key
+    });
   };
 
   showInput = () => {
@@ -96,7 +84,6 @@ class Center extends PureComponent {
       location,
       children,
     } = this.props;
-    console.log(this.state.key);
     const operationTabList = [
       {
         key: 'articles',
