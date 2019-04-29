@@ -35,6 +35,11 @@ export default [
             name: 'braft-editor',
             component: './Libraries/BraftEditor',
           },
+          {
+            path: '/libraries/react-color',
+            name: 'react-color',
+            component: './Libraries/ReactColor',
+          },
         ],
       },
       // Component

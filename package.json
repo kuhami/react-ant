@@ -55,6 +55,7 @@
     "qs": "^6.6.0",
     "rc-animate": "^2.4.4",
     "react": "^16.6.3",
+    "react-color": "^2.17.2",
     "react-container-query": "^0.11.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-document-title": "^2.0.3",
