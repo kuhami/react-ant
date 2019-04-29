@@ -23,7 +23,7 @@ startServer.on('exit', () => {
 
 console.log('Starting development server for e2e tests...');
 startServer.stdout.on('data', data => {
-  console.log(data.toString());
+  console.log(data.toString(),'data.toString');
   if (!once && data.toString().indexOf('Compiled successfully') >= 0) {
     // eslint-disable-next-line
     once = true;
