@@ -72,7 +72,7 @@ export default class BasicDemo extends Component {
     });
 
     return (
-      <Card title={title} bordered={false} style={{minHeight:'500px',background:background}}>
+      <Card title={title} bordered={false} style={{minHeight:'calc(100vh)',background:background}}>
         <Row gutter={24}>
         <Col xl={6} lg={12} sm={24} xs={24}>
           <SketchPicker
