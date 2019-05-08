@@ -54,14 +54,14 @@ const query = {
 class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
-    const {routes} = props.route,routeKey = '/home/home',tab = '我的'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
+    const {routes} = props.route,routeKey = '/home/home',tabName = '首页'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
     const tabLists = this.updateTree(routes);
     let tabList=[];
     tabLists.map((v) => {
       if(v.key === routeKey){
         if(tabList.length === 0){
           v.closable = false
-          v.tab = tab
+          v.tab = tabName
           tabList.push(v);
         }
       }
