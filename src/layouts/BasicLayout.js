@@ -54,13 +54,14 @@ const query = {
 class BasicLayout extends React.PureComponent {
   constructor(props) {
     super(props);
-    const {routes} = props.route,routeKey = '/home/home'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
+    const {routes} = props.route,routeKey = '/home/home',tab = '我的'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
     const tabLists = this.updateTree(routes);
     let tabList=[];
     tabLists.map((v) => {
       if(v.key === routeKey){
         if(tabList.length === 0){
           v.closable = false
+          v.tab = tab
           tabList.push(v);
         }
       }
@@ -317,7 +318,7 @@ class BasicLayout extends React.PureComponent {
       hidenAntTabs,
     } = this.props;
     let {activeKey,routeKey} = this.state;
-      if(pathname === '/'){
+    if(pathname === '/'){
           // router.push(routeKey)
           activeKey = routeKey
       }
