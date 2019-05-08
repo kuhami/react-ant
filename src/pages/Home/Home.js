@@ -4,7 +4,8 @@ import { Button  } from 'antd';
 export default class Home extends Component {
   constructor(props){
     super(props);
-
+    let userName = localStorage.getItem('antd-pro-authority')
+    console.log(JSON.parse(userName));
   }
   componentDidMount() {
 
