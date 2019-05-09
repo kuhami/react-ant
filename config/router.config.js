@@ -22,7 +22,7 @@ export default [
       {
         path: '/libraries',
         name: 'libraries', //不能用汉字，只能用英文
-        icon: 'laptop',
+        icon: 'crown',
         level:'1',
         routes: [
           {
