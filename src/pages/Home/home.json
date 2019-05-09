@@ -33,5 +33,12 @@
     "Name": "多选SelectTree",
     "IconUrl": "image/select-tree.png",
     "init_enable": true
+  },
+  {
+    "fd_fsid": "6",
+    "key":"/account/center",
+    "Name": "个人中心",
+    "IconUrl": "image/center.png",
+    "init_enable": true
   }
 ]
