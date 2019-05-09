@@ -12,7 +12,9 @@ UI-решение "из коробки" для корпоративных при
 [![DevDependencies](https://img.shields.io/david/dev/ant-design/ant-design-pro.svg)](https://david-dm.org/ant-design/ant-design-pro?type=dev)
 [![Gitter](https://badges.gitter.im/ant-design/ant-design-pro.svg)](https://gitter.im/ant-design/ant-design-pro?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+![](https://raw.githubusercontent.com/kuhami/react-ant/master/public/ant1.jpeg)
 ![](https://raw.githubusercontent.com/kuhami/react-ant/master/public/ant.jpeg)
+
 
 </div>
 

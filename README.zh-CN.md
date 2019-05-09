@@ -6,6 +6,7 @@
 
 An out-of-box UI solution for enterprise applications as a React boilerplate.
 
+![](https://raw.githubusercontent.com/kuhami/react-ant/master/public/ant1.jpeg)
 ![](https://raw.githubusercontent.com/kuhami/react-ant/master/public/ant.jpeg)
 
 </div>
