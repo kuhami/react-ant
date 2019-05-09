@@ -19,7 +19,6 @@ export default class Home extends Component {
     onHandlePage({key});
   }
   render() {
-    console.log(this.state.tabs);
     return (
       <div style={{width:'100%',height:'calc(100vh - 64px)',textAlign:'center',background:'#fff'}}>
         <div style={{userSelect:'none'}}>
