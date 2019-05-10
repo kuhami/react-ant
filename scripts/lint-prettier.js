@@ -1,5 +1,6 @@
 /**
  * copy to https://github.com/facebook/react/blob/master/scripts/prettier/index.js
+ * copy to https://github.com/facebook/react/blob/master/scripts/prettier/index.js
  * prettier api doc https://prettier.io/docs/en/api.html
  *----------*****--------------
  *  lint file is prettier
