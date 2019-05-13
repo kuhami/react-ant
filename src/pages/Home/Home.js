@@ -34,10 +34,14 @@ export default class Home extends Component {
                   </li>)
                 })
               }
-              {/*<li onClick={this.handleAdd}>*/}
-                {/*<img style={{width:112,background:'#d4c49b',borderRadius:'50%'}} src={''} alt="1"/>*/}
-                {/*<p>编辑模块</p>*/}
-              {/*</li>*/}
+              <li onClick={this.handleClick}>
+                <div>
+                  <a href="https://github.com/kuhami/react-ant" target={'_blank'}>
+                  <img style={{width:'112px',height:'112px',borderRadius:'50%'}} src="image/star.png" alt="star"/>
+                  </a>
+                </div>
+                <p style={{color:'red'}}>Start</p>
+              </li>
             </ul>
           </div>
         </div>
