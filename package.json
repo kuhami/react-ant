@@ -1,7 +1,7 @@
 {
-  "name": "ant-design-pro",
+  "name": "ant-tabs",
   "version": "2.1.1",
-  "description": "An out-of-box UI solution for enterprise applications",
+  "description": "（基于pro 2.0）基于Ant Design Pro 的 (多标签页tabs、拖拽、富文本、拾色器、多功能table、多选Select)",
   "private": true,
   "scripts": {
     "presite": "node ./scripts/generateMock.js && cd functions && npm install",
