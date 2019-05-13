@@ -10,19 +10,19 @@ const FooterView = () => (
         {
           key: 'Pro 首页',
           title: 'Pro 首页',
-          href: 'https://pro.ant.design',
+          href: 'https://github.com/kuhami',
           blankTarget: true,
         },
         {
           key: 'github',
           title: <Icon type="github" />,
-          href: 'https://github.com/ant-design/ant-design-pro',
+          href: 'https://github.com/kuhami/react-ant',
           blankTarget: true,
         },
         {
-          key: 'Ant Design',
-          title: 'Ant Design',
-          href: 'https://ant.design',
+          key: 'Ant Tabs',
+          title: 'Ant Tabs',
+          href: 'https://github.com/kuhami/react-ant',
           blankTarget: true,
         },
       ]}
