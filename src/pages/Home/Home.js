@@ -40,7 +40,7 @@ export default class Home extends Component {
                   <img style={{width:'112px',height:'112px',borderRadius:'50%'}} src="image/star.png" alt="star"/>
                   </a>
                 </div>
-                <p style={{color:'#f5222d'}}>Start</p>
+                <p style={{color:'#f5222d'}}>Star</p>
               </li>
             </ul>
           </div>
