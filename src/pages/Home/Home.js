@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import { Button  } from 'antd';
+import { Typography  } from 'antd';
 import Link from 'umi/link';
 import tabs from './home.json'
+const { Title, Paragraph, Text } = Typography;
 export default class Home extends Component {
   constructor(props){
     super(props);
@@ -22,7 +23,7 @@ export default class Home extends Component {
     return (
       <div style={{width:'100%',height:'calc(100vh - 64px)',textAlign:'center',background:'#fff'}}>
         <div style={{userSelect:'none'}}>
-          <h2 style={{color:'rgb(144, 159, 172)',fontFamily:'cursive',fontSize:'42px',fontWeight:'700',padding:"40px "}}>欢迎使用多标签Ant-Tabs</h2>
+          <h2 style={{color:'rgb(144, 159, 172)',fontFamily:'cursive',fontSize:'42px',fontWeight:'700',padding:"40px "}}>欢迎使用多标签页<Text type="warning">Ant-Tabs</Text></h2>
           <div className="myHome" >
             <ul >
               {
