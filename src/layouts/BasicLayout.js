@@ -56,7 +56,7 @@ class BasicLayout extends React.PureComponent {
     super(props);
     const {routes} = props.route,routeKey = '/home/home',tabName = '首页'; // routeKey 为设置首页设置 试试 '/dashboard/analysis' 或其他key值
     const tabLists = this.updateTree(routes);
-    let tabList=[];
+    let tabList=[],tabListArr=[];
     tabLists.map((v) => {
       if(v.key === routeKey){
         if(tabList.length === 0){
@@ -65,11 +65,16 @@ class BasicLayout extends React.PureComponent {
           tabList.push(v);
         }
       }
+      if(v.key){
+        tabListArr.push(v.key)
+      }
     });
+    //获取所有已存在key值
     this.state = ({
         tabList:tabList,
         tabListKey:[routeKey],
         activeKey:routeKey,
+        tabListArr,
         routeKey
     })
 
@@ -193,10 +198,16 @@ class BasicLayout extends React.PureComponent {
   };
 
   onHandlePage =(e)=>{//点击左侧菜单
-    const {menuData} = this.props,{key} = e;
+    let {menuData} = this.props,{key} = e;
     const tabLists = this.updateTreeList(menuData);
-    const {tabListKey,tabList} =  this.state
-    router.push(key)
+    const {tabListKey,tabList,tabListArr} =  this.state;
+    if(tabListArr.includes(key)){
+      router.push(key)
+    }else{
+      key = '/exception/404'
+      router.push('/exception/404')
+    }
+
     this.setState({
       activeKey:key
     })

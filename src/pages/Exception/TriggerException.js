@@ -24,6 +24,11 @@ class TriggerException extends PureComponent {
     });
   };
 
+  onChangePage = (key) =>{
+    const {onHandlePage} = this.props.location;
+    onHandlePage({key});
+  }
+
   render() {
     const { isloading } = this.state;
     return (
@@ -40,6 +45,12 @@ class TriggerException extends PureComponent {
           </Button>
           <Button type="danger" onClick={() => this.triggerError(404)}>
             触发404
+          </Button>
+          <Button type="danger" onClick={() => this.onChangePage('/home/home')}>
+            跳转已存在Home页面
+          </Button>
+          <Button type="danger" onClick={() => this.onChangePage('/home/homessss')}>
+            跳转不存在页面
           </Button>
         </Spin>
       </Card>
