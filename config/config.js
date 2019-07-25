@@ -72,10 +72,10 @@ export default {
     '@antv/data-set': 'DataSet',
   },
   // proxy: {
-  //   '/server/api/': {
-  //     target: 'https://preview.pro.ant.design/',
+  //   '/posts': {
+  //     target: 'http://jsonplaceholder.typicode.com/',
   //     changeOrigin: true,
-  //     pathRewrite: { '^/server': '' },
+  //     // pathRewrite: { '^/': '' },
   //   },
   // },
   ignoreMomentLocale: true,
