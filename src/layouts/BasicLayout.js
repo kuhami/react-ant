@@ -198,11 +198,17 @@ class BasicLayout extends React.PureComponent {
   };
 
   onHandlePage =(e)=>{//点击左侧菜单
-    let {menuData} = this.props,{key} = e;
+    let {menuData} = this.props,{key,search=''} = e;
+    console.log(e,search);
     const tabLists = this.updateTreeList(menuData);
     const {tabListKey,tabList,tabListArr} =  this.state;
     if(tabListArr.includes(key)){
-      router.push(key)
+      if(!search){
+        router.push(key)
+      }else{
+        router.push({key,search})
+      }
+
     }else{
       key = '/exception/404'
       router.push('/exception/404')
@@ -328,6 +334,7 @@ class BasicLayout extends React.PureComponent {
       fixedHeader,
       hidenAntTabs,
     } = this.props;
+    console.log(this.props)
     let {activeKey,routeKey} = this.state;
     if(pathname === '/'){
           // router.push(routeKey)
@@ -398,7 +405,7 @@ class BasicLayout extends React.PureComponent {
               >
                 {this.state.tabList.map(item => (
                   <TabPane tab={item.tab} key={item.key} closable={item.closable}>
-                    <Authorized authority={routerConfig} noMatch={<Exception403 />}>
+                    <Authorized  noMatch={<Exception403 />}>
                       {/*{item.content}*/}
                       <Route key={item.key} path={item.path} component={item.content} exact={item.exact} />
                     </Authorized>
