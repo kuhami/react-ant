@@ -26,7 +26,7 @@ export default [
         level:'1',
         routes: [
           {
-            path: '/libraries/drag',
+            path: '/libraries/drag?curre="额外参数01"&start="欢迎start😄"',
             name: 'drag',
             component: './Libraries/Drag',
           },

@@ -319,7 +319,7 @@ class BasicLayout extends React.PureComponent {
     const {
       navTheme,
       layout: PropsLayout,
-      location: { pathname },
+      location: { pathname,search },
       isMobile,
       children,
       menuData,
@@ -334,7 +334,7 @@ class BasicLayout extends React.PureComponent {
           activeKey = routeKey
       }
     const isTop = PropsLayout === 'topmenu';
-    const routerConfig = this.getRouterAuthority(pathname, routes);
+    const routerConfig = this.getRouterAuthority(pathname+search, routes);
     const contentStyle = !fixedHeader ? { paddingTop: 0 } : {};
     this.props.location.onHandlePage = this.onHandlePage;
     const menu = (
