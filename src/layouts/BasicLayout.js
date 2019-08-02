@@ -199,7 +199,6 @@ class BasicLayout extends React.PureComponent {
 
   onHandlePage =(e)=>{//点击左侧菜单
     let {menuData} = this.props,{key,search=''} = e;
-    console.log(e,search);
     const tabLists = this.updateTreeList(menuData);
     const {tabListKey,tabList,tabListArr} =  this.state;
     if(tabListArr.includes(key)){
