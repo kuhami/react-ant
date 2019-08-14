@@ -49,7 +49,7 @@ UI-решение "из коробки" для корпоративных при
   - Monitor
   - Workspace
 - Form
-  - Basic Form
+  - ColoredScrollbars Form
   - Step Form
   - Advanced From
 - List

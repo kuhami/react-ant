@@ -21,6 +21,13 @@
     "init_enable": true
   },
   {
+    "fd_fsid": "7",
+    "key":"/libraries/scrollbars",
+    "Name": "滚动条",
+    "IconUrl": "image/scroll.png",
+    "init_enable": true
+  },
+  {
     "fd_fsid": "4",
     "key":"/component/table",
     "Name": "多功能Table",

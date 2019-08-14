@@ -2,7 +2,7 @@
 order: 0
 title: 
   zh-CN: 基础样例 
-  en-US: Basic Usage
+  en-US: ColoredScrollbars Usage
 ---
 
 Simplest of usage.

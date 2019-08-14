@@ -45,7 +45,7 @@ We need your help: https://github.com/ant-design/ant-design-pro/issues/120
   - Monitor
   - Workspace
 - Form
-  - Basic Form
+  - ColoredScrollbars Form
   - Step Form
   - Advanced From
 - List

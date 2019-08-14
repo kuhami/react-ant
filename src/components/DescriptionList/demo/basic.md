@@ -2,7 +2,7 @@
 order: 0
 title:
   zh-CN: 基本
-  en-US: Basic
+  en-US: ColoredScrollbars
 ---
 
 ## zh-CN
@@ -11,7 +11,7 @@ title:
 
 ## en-US
 
-Basic DescriptionList.
+ColoredScrollbars DescriptionList.
 
 ````jsx
 import DescriptionList from 'ant-design-pro/lib/DescriptionList';

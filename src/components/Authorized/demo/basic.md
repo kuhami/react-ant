@@ -2,10 +2,10 @@
 order: 0
 title: 
   zh-CN: 基本使用
-  en-US: Basic use
+  en-US: ColoredScrollbars use
 ---
 
-Basic use
+ColoredScrollbars use
 
 ```jsx
 import RenderAuthorized from 'ant-design-pro/lib/Authorized';

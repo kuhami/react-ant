@@ -40,6 +40,11 @@ export default [
             name: 'react-color',
             component: './Libraries/ReactColor',
           },
+          {
+            path: '/libraries/scrollbars',
+            name: 'scrollbars',
+            component: './Libraries/ScrollBars/index',
+          }
         ],
       },
       // Component
