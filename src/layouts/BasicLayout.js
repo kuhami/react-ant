@@ -205,7 +205,7 @@ class BasicLayout extends React.PureComponent {
       if(!search){
         router.push(key)
       }else{
-        router.push({key,search})
+        router.push({pathname:key,search})
       }
 
     }else{
