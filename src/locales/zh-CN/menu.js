@@ -5,6 +5,7 @@ export default {
   'menu.libraries.braft-editor': '富文本编译器',
   'menu.libraries.react-color': '拾色器',
   'menu.libraries.scrollbars': '滚动条',
+  'menu.libraries.reactdatagrid': 'ReactDataGrid',
   'menu.component': '组件封装',
   'menu.component.table': '多功能Table',
   'menu.component.select-tree': 'SelectTree',
