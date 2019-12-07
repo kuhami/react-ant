@@ -44,6 +44,11 @@ export default [
             path: '/libraries/scrollbars',
             name: 'scrollbars',
             component: './Libraries/ScrollBars/index',
+          },
+          {
+            path: '/libraries/reactdatagrid',
+            name: 'reactdatagrid',
+            component: './Libraries/ReactDataGrid/index',
           }
         ],
       },

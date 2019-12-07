@@ -28,6 +28,13 @@
     "init_enable": true
   },
   {
+    "fd_fsid": "8",
+    "key":"/libraries/reactdatagrid",
+    "Name": "ReactDatagrid",
+    "IconUrl": "image/table.png",
+    "init_enable": true
+  },
+  {
     "fd_fsid": "4",
     "key":"/component/table",
     "Name": "多功能Table",
