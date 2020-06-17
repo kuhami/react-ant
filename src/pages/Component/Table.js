@@ -117,7 +117,7 @@ export default class Tables extends Component {
                     title: (this.getPopover(<span>重新render的title  <Icon style={redTitle} type='question-circle-o' /></span>)),
                     // fixed: 'left',
                     align:'center', //设置列内容的对齐方式
-                    render:text => <a href="javascript:;">{text}</a>,
+                    render:text => <div>{text}</div>,
                 },
                 "fsMaterialId":{
                     width:'100px',
