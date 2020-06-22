@@ -37,6 +37,14 @@ export default class Home extends Component {
               }
               <li onClick={this.handleClick}>
                 <div>
+                  <a href="https://kuhami.github.io/react-ant/" target={'_blank'}>
+                    <img style={{width:'112px',height:'112px',borderRadius:'50%'}} src="favicon.png" alt="react-ant"/>
+                  </a>
+                </div>
+                <p style={{color:'#6345f5'}}>项目访问地址</p>
+              </li>
+              <li onClick={this.handleClick}>
+                <div>
                   <a href="https://github.com/kuhami/react-ant" target={'_blank'}>
                   <img style={{width:'112px',height:'112px',borderRadius:'50%'}} src="image/star.png" alt="star"/>
                   </a>
