@@ -196,38 +196,46 @@ class BasicLayout extends React.PureComponent {
     }
     return <SettingDrawer />;
   };
-
-  onHandlePage =(e)=>{//点击左侧菜单
-    let {menuData} = this.props,{key,search=''} = e;
+  //截取路由 '/a/b/1'
+  StringToRoute = ( v ) => {
+    const str = /\/:(.+)/g
+    const key = v.replace(str,(_,g)=>'')
+    const keyArr = key.split('/')
+    const keyString = [keyArr[0],keyArr[1],keyArr[2]]
+    return (keyString.toString()).replace(/,/g,'/')
+  }
+  onHandlePage = ( e ) =>{//点击左侧菜单
+    const { menuData } = this.props
+    let { key, title='' } = e
     const tabLists = this.updateTreeList(menuData);
-    const {tabListKey,tabList,tabListArr} =  this.state;
-    if(tabListArr.includes(key)){
-      if(!search){
-        router.push(key)
-      }else{
-        router.push({pathname:key,search})
-      }
+    const {tabListKey, tabList, tabListArr} =  this.state;
+    let splitKey = this.StringToRoute( key )
 
+    if(tabListArr.includes(splitKey)){
+      router.push({pathname:key})
     }else{
       key = '/exception/404'
-      router.push('/exception/404')
+      splitKey = '/exception/404'
+      router.push({pathname:'/exception/404'}) //不存在路由 404
     }
 
     this.setState({
       activeKey:key
     })
+
     tabLists.map((v) => {
-      if(v.key === key){
+      if(v.key === splitKey){
         if(tabList.length === 0){
           v.closable = false
           this.setState({
             tabList:[...tabList,v]
           })
         }else{
-          if(!tabListKey.includes(v.key)){
+          if(!tabListKey.includes(key)){
+            const {closable, content, locale, tab} = v;
             this.setState({
-              tabList:[...tabList,v],
-              tabListKey:[...tabListKey,v.key]
+              tabList:[...tabList,{ closable, content, key, locale, tab: !title ? tab : title }],
+              tabListKey:[...tabListKey, key]
             })
           }
         }
@@ -351,7 +359,7 @@ class BasicLayout extends React.PureComponent {
     );
     const operations = (
       <Dropdown overlay={menu} >
-        <a className="ant-dropdown-link" href="#">
+        <a className="ant-dropdown-link">
           Hover me<Icon type="down" />
         </a>
       </Dropdown>

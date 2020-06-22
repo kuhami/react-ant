@@ -8,6 +8,7 @@ export default {
   'menu.libraries.reactdatagrid': 'ReactDataGrid',
   'menu.component': '组件封装',
   'menu.component.table': '多功能Table',
+  'menu.component.edit': '编辑',
   'menu.component.select-tree': 'SelectTree',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': '分析页',

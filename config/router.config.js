@@ -26,7 +26,7 @@ export default [
         level:'1',
         routes: [
           {
-            path: '/libraries/drag?curre="额外参数01"&start="欢迎start😄"',
+            path: '/libraries/drag',
             name: 'drag',
             component: './Libraries/Drag',
           },
@@ -63,6 +63,12 @@ export default [
                     path: '/component/table',
                     name: 'table',
                     component: './Component/Table',
+                },
+                {
+                  path: '/component/edit',
+                  name: 'edit',
+                  hideInMenu: true,
+                  component: './Component/Edit',
                 },
                 {
                     path: '/component/select-tree',

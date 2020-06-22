@@ -6,7 +6,6 @@ import styles from './Table.less';
 export default class Tables extends Component {
     constructor(props){
         super(props);
-        console.log(TableData);
         let {colTitle,colContent,page_info} = TableData.data;
         this.state={
             finder:{
@@ -49,17 +48,20 @@ export default class Tables extends Component {
                 fixed: 'right',
                 render:(text,record)=>{
 
-                    return <Button size={'small'} onClick={()=>this.handleClick(record)}>详情</Button>
+                    return <a onClick={()=>this.handleClick(record)}>查看</a>
                 }
             }
         ]
     }
     handleClick = (record)=>{
-        console.log(record);
-        this.setState({
-            visible: true,
-            titleKey:record.name
-        });
+      const { key } = record
+      const { onHandlePage } = this.props.location
+
+      onHandlePage({key:`/component/edit/${key}/'哇啦'`,title:`多功能Table-${key}`})
+        // this.setState({
+        //     visible: true,
+        //     titleKey:record.name
+        // });
     }
     handleOk = (e) => {
         console.log(e);
