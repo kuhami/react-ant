@@ -24,9 +24,9 @@ class TriggerException extends PureComponent {
     });
   };
 
-  onChangePage = (key,search) =>{
+  onChangePage = (key) =>{
     const {onHandlePage} = this.props.location;
-    onHandlePage({key,search});
+    onHandlePage({key});
   }
 
   render() {
@@ -46,7 +46,7 @@ class TriggerException extends PureComponent {
           <Button type="danger" onClick={() => this.triggerError(404)}>
             触发404
           </Button>
-          <Button type="danger" onClick={() => this.onChangePage('/libraries/braft-editor','?id=1')}>
+          <Button type="danger" onClick={() => this.onChangePage('/libraries/braft-editor')}>
             跳转已存在Home页面
           </Button>
           <Button type="danger" onClick={() => this.onChangePage('/home/homessss')}>
