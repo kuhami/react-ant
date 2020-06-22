@@ -12,7 +12,7 @@ export default class Components extends Component {
             title: '参数	',
             dataIndex: 'Param',
             key: 'Param',
-            render: text => <a href="javascript:;">{text}</a>,
+            render: text => <a>{text}</a>,
         }, {
             title: '说明',
             dataIndex: 'explain',
